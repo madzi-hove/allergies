@@ -1,14 +1,15 @@
 #include "allergies.h"
-
+// check if allergy has been added before
 bool is_false(const allergen_list_t allergen_list, const allergen_t allergen){
 	return allergen_list.allergens[allergen] == 0;
 }
-
+// return if allergic to or not
 bool is_allergic_to(const allergen_t allergen, const unsigned int score) {
 	allergen_list_t allergen_list = get_allergens(score);
     return allergen_list.allergens[allergen];
 }
 
+// check and list all allergies represented by score
 allergen_list_t get_allergens(const unsigned int score) {
     allergen_list_t temp = {0, {0}};
     int tmp_score = score;
