@@ -21,7 +21,8 @@ typedef struct {
    bool allergens[ALLERGEN_COUNT];
 } allergen_list_t;
 
-bool is_false(allergen_list_t allergen_list, allergen_t allergen);
+bool is_false(allergen_list_t *allergen_list, allergen_t allergen);
 bool is_allergic_to(const allergen_t allergen, const uint16_t score);
 allergen_list_t get_allergens(const uint16_t score);
+void populate_arr(allergen_list_t *allergens, uint16_t score);
 #endif
