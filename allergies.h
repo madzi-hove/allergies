@@ -2,6 +2,7 @@
 #define ALLERGIES_H
 
 #include <stdbool.h>
+#include <stdint.h>
 
 typedef enum {
    ALLERGEN_EGGS = 0,
@@ -21,6 +22,6 @@ typedef struct {
 } allergen_list_t;
 
 bool is_false(allergen_list_t allergen_list, allergen_t allergen);
-bool is_allergic_to(const allergen_t allergen, const unsigned int score);
-allergen_list_t get_allergens(const unsigned int score);
+bool is_allergic_to(const allergen_t allergen, const uint16_t score);
+allergen_list_t get_allergens(const uint16_t score);
 #endif
